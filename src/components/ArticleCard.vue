@@ -1,31 +1,49 @@
 <template>
-    <div class="card">
+  <ul>
+    <li class="card" v-for="blog in blogs" :key="blog.id">
       <div class="card-body">
-
-        <div id='ArticleTitle'> 这是文章标题 </div>
+        <div id='ArticleTitle'>{{ blog.title }}</div>
         <hr>
-        <div id='ArticleContent'>
-            <img src="https://cdn.acwing.com/media/user/profile/photo/89158_lg_c7db67f49c.jpg">
-            <div id="ArtcileDescribe"> 
-              <div id="DescribeText">这是作品概要</div>
-              <div id="ArticleLabel">
-                <router-link :to="{name : 'home'}">#标签1</router-link>
-              </div>
-            </div>
-        </div>
-
+        <div id='ArticleContent'>没有描述</div>
       </div>
-    </div>
+    </li>
+  </ul>
 </template>
 
 
 <script>
+import $ from 'jquery';
+
 export default {
   name: 'ArticleCard',
+  data() {
+    return {
+      blogs : []
+    }
+  },
+  created() {
+      $.ajax({
+        url : 'http://119.29.52.203:8000/blog/',
+        type : 'GET',
+        dataType : 'json',
+        success: (data) => {
+          for (var i = 0; i < data.length; i++) {
+            this.blogs.push(data[i]);
+          }
+        },
+        error: function() {
+          console.log("请求失败");
+        }
+      })
+  }
 }
 </script>
 
 <style scoped>
+li {
+  margin-bottom: 10px;
+}
+
 .card-body {
   height: 200px;
 }

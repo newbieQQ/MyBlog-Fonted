@@ -27,4 +27,8 @@ img {
   margin-top: 10px;
 }
 
+.card {
+  position: fixed;
+}
+
 </style>
