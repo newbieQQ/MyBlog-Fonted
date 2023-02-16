@@ -35,6 +35,5 @@ export default {
 .navbar {
   background-color: whitesmoke;
 }
-
 </style>
 
