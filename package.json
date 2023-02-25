@@ -10,9 +10,9 @@
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
-    "core-js": "^3.8.3",
-    "jquery": "^3.6.3",
+    "core-js": "^3.28.0",
     "jQuery": "^1.7.4",
+    "jquery": "^3.6.3",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
@@ -26,7 +26,9 @@
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "vue-loader": "^17.0.1",
+    "vue-template-compiler": "^2.7.14"
   },
   "eslintConfig": {
     "root": true,
