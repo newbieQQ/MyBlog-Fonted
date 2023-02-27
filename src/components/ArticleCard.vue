@@ -1,11 +1,13 @@
 <template>
   <ul>
     <li class="card" v-for="blog in showblog" :key="blog.id">
-      <div class="card-body">
-        <div id='ArticleTitle'>{{ blog.title }}</div>
-        <hr>
-        <div id='ArticleContent'>{{ blog.describe }}</div>
-      </div>
+      <router-link :to="{name : 'article', params : {id : blog.id}}" class="page-link">
+        <div class="card-body">
+          <div id='ArticleTitle'>{{ blog.title }}</div>
+          <hr>
+          <div id='ArticleContent'>{{ blog.describe }}</div>
+        </div>
+      </router-link>
     </li>
     <li>
       <nav aria-label="Page navigation example">

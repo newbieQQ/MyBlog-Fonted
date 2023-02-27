@@ -8,17 +8,6 @@
 </template>
 
 <script>
-const Http = new XMLHttpRequest();
-const url='http://119.29.52.203:8000/blog/1';
-Http.open("GET", url);
-Http.send();
-
-//Http.onreadystatechange = (e) => {
-//  console.log(Http.responseText)
-//}
-
-
-
 export default {
   name: 'ArticleView',
   components: {
