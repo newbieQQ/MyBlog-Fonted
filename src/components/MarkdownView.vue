@@ -1,13 +1,14 @@
 <template>
   <div class="card">
     <div class="card-body">
-      <div v-html="markdown"></div>
+      <div v-html="html"></div>
     </div>
   </div>
 </template>
 
 <script>
 import marked from 'marked'
+
 export default {
   data () {
     return {
@@ -23,7 +24,20 @@ export default {
   },
   computed: {
     html () {
-      return marked(this.markdown)
+      let markdown = this.markdown;
+      var MD = new marked.Renderer();
+      marked.options({
+        renderer : MD,
+        gfm: true,
+        tables: true,
+        breaks: false,
+        pedantic: false,
+        sanitize: false,
+        smartLists: true,
+        smartypants: false
+      });
+      console.log(marked(markdown))
+      return marked(markdown, {sanitize: true});
     }
   }
 }
