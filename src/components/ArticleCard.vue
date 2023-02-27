@@ -5,7 +5,14 @@
         <div class="card-body">
           <div id='ArticleTitle'>{{ blog.title }}</div>
           <hr>
-          <div id='ArticleContent'>{{ blog.describe }}</div>
+            <div class="row">
+              <div class="col-sm-2">
+                <img class='img-fluid' src="https://qqpic-1312843796.cos.ap-guangzhou.myqcloud.com/Icpc_logo.png" alt="">
+              </div>
+              <div class="col-sm-6" style="margin-left:50px">
+                <div id='ArticleContent'>{{ blog.describe }}</div>
+              </div>
+            </div>
         </div>
       </router-link>
     </li>
@@ -100,7 +107,7 @@ li {
 }
 
 img {
-  height: 100%;
+  margin-top: 10px;
   float: left;
 }
 
