@@ -2,7 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-8">
-        <MarkdownView/>
+        <div class="card">
+          <div class="card-body">
+            <MarkdownView/>
+          </div>
+        </div>
       </div>
     </div>
   </div>
