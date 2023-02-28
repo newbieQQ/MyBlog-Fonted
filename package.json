@@ -10,14 +10,18 @@
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "babel-loader": "^9.1.2",
+    "babel-runtime": "^6.26.0",
     "bootstrap": "^5.2.3",
     "core-js": "^3.29.0",
+    "corejs": "^1.0.0",
     "highlight.js": "^11.7.0",
     "html-loader": "^4.2.0",
     "jQuery": "^1.7.4",
+    "markdown-it": "^13.0.1",
     "markdown-loader": "^8.0.0",
     "marked": "^4.2.12",
     "vue": "^3.2.13",
+    "vue-markdown": "^2.2.4",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
   },
