@@ -6,17 +6,18 @@
 import { marked } from 'marked';
 
 export default {
-  compontents: {
-  },
   data () {
     return {
-      markdown: `# Hello Vue`,
       html : '<h1>Vue</h1>'
     }
   },
   created() {
-    this.html = marked(this.markdown);
-  }
+    console.log(this.ArticleContext);
+    this.html = marked(this.ArticleContext);
+  },
+  props: [
+    'ArticleContext',
+  ]
 
 }
 </script>

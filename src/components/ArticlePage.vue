@@ -4,7 +4,10 @@
       <div class="col-sm-8">
         <div class="card">
           <div class="card-body">
-            <MarkdownView/>
+            <MarkdownView 
+              v-if="ArticleContext"
+              :ArticleContext='ArticleContext'
+            />
           </div>
         </div>
       </div>
@@ -23,7 +26,7 @@ export default {
   },
   data() {
     return {
-      ArticleContext: "",
+      ArticleContext: null,
     }
   },
   created() {
@@ -32,7 +35,9 @@ export default {
         type:     'GET',
         dataType: 'json',
         success:  (data) => {
+          console.log(data);
           this.ArticleContext = data['content'];
+          console.log(this.ArticleContext);
         },
         error:    function() {
           console.log("请求失败");
