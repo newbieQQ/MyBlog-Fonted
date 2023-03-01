@@ -1,17 +1,21 @@
 <template>
-<div class="card-body">
-  <router-link :to="{name : 'article', params : {id : blog.id}}" class="page-link">
-    <div id='ArticleTitle'>{{ blog.title }}</div>
-    <hr>
-      <div class="row">
-        <div class="col-sm-2">
-          <img class='img-fluid' src="https://qqpic-1312843796.cos.ap-guangzhou.myqcloud.com/Icpc_logo.png" alt="">
-        </div>
-        <div class="col-sm-6" style="margin-left:50px">
-          <div id='ArticleContent'>{{ blog.describe }}</div>
-        </div>
+<div class="card">
+  <div class="card-body">
+    <router-link :to="{name : 'article', params : {id : blog.id}}" class="page-link">
+      <div id='ArticleTitle'>
+          {{ blog.title }}
       </div>
-  </router-link>
+    </router-link>
+    <hr>
+    <div class="row">
+      <div class="col-sm-2">
+        <img class='img-fluid' :src="blog.img" alt="">
+      </div>
+      <div class="col-sm-6" style="margin-left:50px">
+        <div id='ArticleContent'>{{ blog.describe }}</div>
+      </div>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -25,8 +29,6 @@ export default {
   props: [ 
     'blog',
   ],
-  created() {
-  },
 }
 </script>
 
@@ -68,5 +70,10 @@ img {
 
 span{
   color: black;
+}
+
+.card {
+  margin-bottom: 10px;
+  list-style: none;
 }
 </style>
