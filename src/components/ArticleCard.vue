@@ -13,7 +13,7 @@
           <img class='img-fluid' :src="blog.img" alt="">
         </router-link>
       </div>
-      <div class="col-sm-6" style="margin-left:50px">
+      <div class="col-sm-6" >
         <div id='ArticleContent'>{{ blog.describe }}</div>
       </div>
     </div>
@@ -59,6 +59,7 @@ img {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  word-wrap:break-word;
 }
 
 #ArticleLabel {
