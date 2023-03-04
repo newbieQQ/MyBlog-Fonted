@@ -97,7 +97,6 @@ export default {
 <style scoped>
 @media (min-width: 1025px){
   .container {
-    margin-top: 80px;
     width: 70%;
   }
 }

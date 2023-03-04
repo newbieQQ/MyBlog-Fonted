@@ -48,6 +48,7 @@ h6 {
 }
 
 img {
-  width: 10px;
+  width: 100% !important;
+  height: auto !important;
 }
 </style>
