@@ -2,9 +2,9 @@
 <div class="card">
   <div class="card-body">
     <router-link :to="{name : 'article', params : {id : blog.id}}" class="page-link">
-      <div id='ArticleTitle'>
+      <h4 id='ArticleTitle'>
           {{ blog.title }}
-      </div>
+      </h4>
     </router-link>
     <hr>
     <div class="row">
@@ -36,6 +36,7 @@ export default {
 
 <style scoped>
 img {
+  width: 100%;
   margin-top: 10px;
   float: left;
 }
@@ -43,7 +44,6 @@ img {
 #ArticleTitle {
   margin-bottom: auto;
   margin-top: auto;
-  font-size: 100%;
   height: 10%;
 }
 
