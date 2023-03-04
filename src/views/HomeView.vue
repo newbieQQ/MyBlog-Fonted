@@ -97,7 +97,7 @@ export default {
 <style scoped>
 @media (min-width: 1025px){
   .container {
-    margin-top: 20px;
+    margin-top: 80px;
     width: 70%;
   }
 }
@@ -110,11 +110,10 @@ export default {
     width: 100%;
   }
   .container {
-    margin-top: 20px;
+    margin-top: 80px;
     width: 100%;
   }
 }
-
 
 .card-body {
   height: 200px;

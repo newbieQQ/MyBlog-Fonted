@@ -9,7 +9,9 @@
     <hr>
     <div class="row">
       <div class="col-sm-2">
-        <img class='img-fluid' :src="blog.img" alt="">
+        <router-link :to="{name : 'article', params : {id : blog.id}}" class="page-link">
+          <img class='img-fluid' :src="blog.img" alt="">
+        </router-link>
       </div>
       <div class="col-sm-6" style="margin-left:50px">
         <div id='ArticleContent'>{{ blog.describe }}</div>

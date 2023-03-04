@@ -33,11 +33,10 @@ export default {
 
 <style scoped>
 .navbar {
+  margin-top: 0px;
   width: 100%;
   background-color: whitesmoke;
   z-index: 9999;
-  position: fixed;
-  top: 0;
 }
 
 </style>
