@@ -79,4 +79,12 @@ span{
   margin-bottom: 10px;
   list-style: none;
 }
+
+@media (max-width: 575px) {
+  #ArtcileDescribe {
+    display: none;
+  }
+  
+}
 </style>
+
