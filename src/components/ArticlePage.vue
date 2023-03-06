@@ -4,6 +4,7 @@
       <div class="col-sm-8">
         <div class="card">
           <div class="card-body">
+            <h1 v-if="Title">{{Title}}</h1>
             <MarkdownView 
               v-if="ArticleContext"
               :ArticleContext='ArticleContext'
@@ -27,6 +28,7 @@ export default {
   data() {
     return {
       ArticleContext: null,
+      Title: null,
     }
   },
   created() {
@@ -36,8 +38,8 @@ export default {
         dataType: 'json',
         success:  (data) => {
           console.log(data);
+          this.Title = data['title'];
           this.ArticleContext = data['content'];
-          console.log(this.ArticleContext);
         },
         error:    function() {
           console.log("请求失败");
@@ -61,5 +63,9 @@ export default {
     margin-top: 20px;
     width: 100%;
   }
+}
+
+h1 {
+  text-align: center;
 }
 </style>
