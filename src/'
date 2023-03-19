@@ -1,0 +1,39 @@
+<template>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-1"> 
+        <div class="card">
+          <div class="card-body">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">用户名</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+            </div>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg">密 码</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</template>
+
+<script>
+export default {
+  name: 'LoginView',
+  components: {
+
+  }
+}
+</script>
+
+<style scoped>
+.input-group-lg {
+  margin-top: 10px;
+}
+
+span {
+  text-align: center;
+}
+</style>
