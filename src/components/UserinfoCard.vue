@@ -43,6 +43,7 @@ a {
 .card {
   position: fixed;
   text-align: center;
+  background-color: #ecf0f3;
 }
 
 svg {

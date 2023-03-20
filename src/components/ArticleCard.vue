@@ -76,7 +76,7 @@ span{
 }
 
 .card {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   list-style: none;
 }
 

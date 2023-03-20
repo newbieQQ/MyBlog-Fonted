@@ -44,10 +44,12 @@ export default {
 
 .navbar {
   width: 100%;
-  background-color: whitesmoke;
+  background-color: #ecf0f3;
+  box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
+  border-radius: 12px;
   z-index: 9999;
   position: fixed;
-  top: 0;
+  top: 5px;
 }
 
 svg {
