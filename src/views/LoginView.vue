@@ -30,13 +30,13 @@
           <div class="switch_container" id="switch-c1">
               <h2 class="switch_title title" style="letter-spacing: 0;">Welcome Back！</h2>
               <p class="switch_description description">已经有账号了嘛，去登入账号来进入奇妙世界吧！！！</p>
-              <button  @click="changeForm" class="switch_button button switch-btn">SIGN IN</button>
+              <button  @click="LoginModel" class="switch_button button switch-btn">SIGN IN</button>
           </div>
 
-          <div class="switch_container is-hidden" id="switch-c2">
+          <div class="switch_container" id="switch-c2">
               <h2 class="switch_title title" style="letter-spacing: 0;">Hello Friend！</h2>
               <p class="switch_description description">去注册一个账号，成为尊贵的粉丝会员，让我们踏入奇妙的旅途！</p>
-              <button  @click="changeForm" class="switch_button button switch-btn">SIGN UP</button>
+              <button  @click="LoginModel" class="switch_button button switch-btn">SIGN UP</button>
           </div>
       </div>
   </div>
@@ -51,53 +51,23 @@ export default {
   },
   data() {
     return {
-      switchCtn:    null,
-      switchC1:     null,
-      switchC2:     null,
-      switchCircle: null,
-      switchBtn:    null,
-      aContainer:   null,
-      bContainer:   null,
-      allButtons:   null,
-      getButtons:   null,
-      changeForm:   null,
-      shell:        null,
     }
 
   },
   created() {
-    this.switchCtn    = document.querySelector("#switch-cnt");
-    this.switchC1     = document.querySelector("#switch-c1");
-    this.switchC2     = document.querySelector("#switch-c2");
-    this.switchCircle = document.querySelectorAll(".switch_circle");
-    this.switchBtn    = document.querySelectorAll(".switch-btn");
-    this.aContainer   = document.querySelector("#a-container");
-    this.bContainer   = document.querySelector("#b-container");
-
-    this.allButtons   = document.querySelectorAll(".submit");
-
-    this.getButtons   = (e) => e.preventDefault();
   },
-  method: {
-    changeForm() {
-        // 修改类名
-        this.switchCtn.classList.add("is-gx");
-        setTimeout(function () {
-            this.switchCtn.classList.remove("is-gx");
-        }, 1500)
+  methods: {
+    LoginModel() {
+      let aContainer = document.getElementById('a-container');
+      let switchC1   = document.getElementById('switch-c1');
+      let switchC2   = document.getElementById('switch-c2');
 
-        this.switchCtn.classList.toggle("is-txr");
+      switchC2.style.visibility   = 'visible';
 
-        this.switchCircle[0].classList.toggle("is-txr");
-        this.switchCircle[1].classList.toggle("is-txr");
-
-        this.switchC1.classList.toggle("is-hidden");
-        this.switchC2.classList.toggle("is-hidden");
-        this.aContainer.classList.toggle("is-txl");
-        this.bContainer.classList.toggle("is-txl");
-        this.bContainer.classList.toggle("is-z");
-    }
-  }
+      switchC1.style.visibility   = 'hidden';
+      aContainer.style.visibility = 'hidden';
+    },
+  },
 }
 </script>
 
@@ -116,9 +86,7 @@ export default {
     height: 600px;
     min-width: 1000px;
     min-height: 600px;
-
     top : 100px;
-
     padding: 25px;
     background-color: #ecf0f3;
     box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
@@ -194,7 +162,6 @@ export default {
 }
 
 .form_span {
-    margin-top: 30px;
     margin-bottom: 12px;
 }
 
@@ -328,13 +295,6 @@ export default {
     transition: 1.25s;
 }
 
-.is-hidden {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    transition: 1.25s;
-}
-
 .is-gx {
     animation: is-gx 1.25s;
 }
@@ -351,5 +311,10 @@ export default {
     50% {
         width: 500px;
     }
+}
+
+#switch-c2 {
+  visibility: hidden;
+  transition: 1.25s;
 }
 </style>
