@@ -20,9 +20,7 @@
 
       <span class="navbar-text" style="text-align: center;">
         <div class="container">
-          <router-link class="nav-link active" :to="{name :'login'}" style="display: inline-block">登录</router-link>
-          <span class="nav-link active" style="display: inline-block">|</span>
-          <router-link class="nav-link active" :to="{name :'home'}" style="display: inline-block">注册</router-link>
+          <router-link class="nav-link active" :to="{name :'login'}" style="display: inline-block">登录 | 注册</router-link>
         </div>
       </span>
       

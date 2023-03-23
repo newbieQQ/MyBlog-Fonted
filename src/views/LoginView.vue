@@ -6,9 +6,10 @@
           <form action="" method="" class="form" id="a-form">
               <h2 class="form_title title">创建账号</h2>
               <span class="form_span">选择注册方式活电子邮箱注册</span>
-              <input type="text" class="form_input" placeholder="Name">
-              <input type="text" class="form_input" placeholder="Email">
-              <input type="text" class="form_input" placeholder="Password">
+              <input type="name" class="form_input" placeholder="UserName">
+              <input type="email" class="form_input" placeholder="Email">
+              <input type="password" class="form_input" placeholder="Password">
+              <input type="password" class="form_input" placeholder="verifyPassword">
               <button class="form_button button submit">SIGN UP</button>
           </form>
       </div>
@@ -17,7 +18,7 @@
           <form action="" method="" class="form" id="b-form">
               <h2 class="form_title title">登入账号</h2>
               <span class="form_span">选择登录方式活电子邮箱登录</span>
-              <input type="text" class="form_input" placeholder="Email">
+              <input type="text" class="form_input" placeholder="UserName">
               <input type="text" class="form_input" placeholder="Password">
               <a class="form_link">忘记密码？</a>
               <button class="form_button button submit">SIGN IN</button>
@@ -36,7 +37,7 @@
           <div class="switch_container" id="switch-c2">
               <h2 class="switch_title title" style="letter-spacing: 0;">Hello Friend！</h2>
               <p class="switch_description description">去注册一个账号，成为尊贵的粉丝会员，让我们踏入奇妙的旅途！</p>
-              <button  @click="LoginModel" class="switch_button button switch-btn">SIGN UP</button>
+              <button  @click="RegisterModel" class="switch_button button switch-btn">SIGN UP</button>
           </div>
       </div>
   </div>
@@ -58,15 +59,35 @@ export default {
   },
   methods: {
     LoginModel() {
-      let aContainer = document.getElementById('a-container');
-      let switchC1   = document.getElementById('switch-c1');
-      let switchC2   = document.getElementById('switch-c2');
-
-      switchC2.style.visibility   = 'visible';
-
+      let aContainer  = document.getElementById('a-container');
+      let switchC1    = document.getElementById('switch-c1');
       switchC1.style.visibility   = 'hidden';
       aContainer.style.visibility = 'hidden';
+
+      let bContainer = document.getElementById('b-container')
+      let switchC2   = document.getElementById('switch-c2');
+      let switchcnt  = document.getElementById('switch-cnt');
+
+      switchC2.style.visibility = 'visible';
+      bContainer.style.left     = '0';
+      switchcnt.style.left      = 'calc(100% - 400px)';
+
     },
+    RegisterModel() {
+      let switchC2   = document.getElementById('switch-c2');
+      switchC2.style.visibility   = 'hidden';
+
+      let switchC1   = document.getElementById('switch-c1');
+      let switchcnt  = document.getElementById('switch-cnt');
+      switchC1.style.visibility   = "visible";
+      switchcnt.style.left = '0';
+
+      setTimeout(() => {
+        let aContainer = document.getElementById('a-container');
+        aContainer.style.visibility = 'visible';
+      }, "300");
+
+    }
   },
 }
 </script>
@@ -129,7 +150,7 @@ export default {
     height: 100%;
     padding: 25px;
     background-color: #ecf0f3;
-    transition: 1.25s;
+    transition: 0.5s;
 }
 
 .form {
@@ -206,6 +227,7 @@ export default {
 .a-container {
     z-index: 100;
     left: calc(100% - 600px);
+    transition: 0.5s;
 }
 
 .b-container {
@@ -249,6 +271,7 @@ export default {
     height: 300px;
 }
 
+
 .switch_container {
     display: flex;
     justify-content: center;
@@ -278,43 +301,7 @@ export default {
     transition: 0.25s;
 }
 
-.is-txr {
-    left: calc(100% - 400px);
-    transition: 1.25s;
-    transform-origin: left;
-}
-
-.is-txl {
-    left: 0;
-    transition: 1.25s;
-    transform-origin: right;
-}
-
-.is-z {
-    z-index: 200;
-    transition: 1.25s;
-}
-
-.is-gx {
-    animation: is-gx 1.25s;
-}
-
-@keyframes is-gx {
-
-    0%,
-    10%,
-    100% {
-        width: 400px;
-    }
-
-    30%,
-    50% {
-        width: 500px;
-    }
-}
-
 #switch-c2 {
   visibility: hidden;
-  transition: 1.25s;
 }
 </style>
