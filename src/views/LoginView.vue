@@ -6,11 +6,10 @@
           <form action="" method="" class="form" id="a-form">
               <h2 class="form_title title">创建账号</h2>
               <span class="form_span">选择注册方式活电子邮箱注册</span>
-              <input type="name" class="form_input" placeholder="UserName">
-              <input type="email" class="form_input" placeholder="Email">
-              <input type="password" class="form_input" placeholder="Password">
-              <input type="password" class="form_input" placeholder="verifyPassword">
-              <button class="form_button button submit">SIGN UP</button>
+              <input type = "name" class="form_input" placeholder="UserName" id="RegisterUsername">
+              <input type = "password" class="form_input" placeholder="Password" id="RegisterPassword">
+              <input type = "password" class="form_input" placeholder="verifyPassword" id="RegisterVerify">
+              <button class="form_button button submit" @click="SignUp">SIGN UP</button>
           </form>
       </div>
 
@@ -18,10 +17,10 @@
           <form action="" method="" class="form" id="b-form">
               <h2 class="form_title title">登入账号</h2>
               <span class="form_span">选择登录方式活电子邮箱登录</span>
-              <input type="text" class="form_input" placeholder="UserName">
-              <input type="text" class="form_input" placeholder="Password">
+              <input type="text" class="form_input" placeholder="UserName" id='LoginUsername'>
+              <input type="password" class="form_input" placeholder="Password" id='Loginpassword'>
               <a class="form_link">忘记密码？</a>
-              <button class="form_button button submit">SIGN IN</button>
+              <button class="form_button button submit" @click="SignIn">SIGN IN</button>
           </form>
       </div>
 
@@ -45,6 +44,7 @@
 </template>
 
 <script>
+import $ from 'jquery'
 
 export default {
   name: 'LoginView',
@@ -86,9 +86,52 @@ export default {
         let aContainer = document.getElementById('a-container');
         aContainer.style.visibility = 'visible';
       }, "300");
+    },
+    SignIn() {
+      // 获取表单数据
+      let password = document.getElementById('Loginpassword').value;
+      let username = document.getElementById('LoginUsername').value;
 
-    }
+       $.ajax({
+        url: '',
+        type: 'POST',
+        data: {
+          username: username,
+          password: password
+        },
+        success: function (res) {
+          console.log(res)
+        },
+        error: function (err) {
+          console.log(err)
+        }
+        })
   },
+  SignUp() {
+    let password = document.getElementById('RegisterPassword').value;
+    let username = document.getElementById('RegisterUsername').value;
+    let verify   = document.getElementById('RegisterVerify').value;
+
+    if (password === verify) {
+      $.ajax({
+        url: '',
+        type: 'POST',
+        data: {
+          username: username,
+          password: password
+        },
+        success: function (res) {
+          console.log(res)
+        },
+        error: function (err) {
+          console.log(err)
+        }
+      })
+    } else {
+      alert('两次密码不一致')
+    }
+    
+  }
 }
 </script>
 
