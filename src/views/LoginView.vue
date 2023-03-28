@@ -48,15 +48,6 @@ import $ from 'jquery'
 
 export default {
   name: 'LoginView',
-  components: {
-  },
-  data() {
-    return {
-    }
-
-  },
-  created() {
-  },
   methods: {
     LoginModel() {
       let aContainer  = document.getElementById('a-container');
@@ -71,7 +62,6 @@ export default {
       switchC2.style.visibility = 'visible';
       bContainer.style.left     = '0';
       switchcnt.style.left      = 'calc(100% - 400px)';
-
     },
     RegisterModel() {
       let switchC2   = document.getElementById('switch-c2');
@@ -87,32 +77,10 @@ export default {
         aContainer.style.visibility = 'visible';
       }, "300");
     },
-    SignIn() {
 
+    SignIn() {
       let password = document.getElementById('Loginpassword').value;
       let username = document.getElementById('LoginUsername').value;
-
-       $.ajax({
-        url: '',
-        type: 'POST',
-        data: {
-          username: username,
-          password: password
-        },
-        success: function (res) {
-          console.log(res)
-        },
-        error: function (err) {
-          console.log(err)
-        }
-        })
-  },
-  SignUp() {
-    let password = document.getElementById('RegisterPassword').value;
-    let username = document.getElementById('RegisterUsername').value;
-    let verify   = document.getElementById('RegisterVerify').value;
-
-    if (password === verify) {
       $.ajax({
         url: '',
         type: 'POST',
@@ -127,12 +95,35 @@ export default {
           console.log(err)
         }
       })
-    } else {
-      alert('两次密码不一致')
+    },
+
+    SignUp() {
+      let password = document.getElementById('RegisterPassword').value;
+      let username = document.getElementById('RegisterUsername').value;
+      let verify   = document.getElementById('RegisterVerify').value;
+
+      if (password === verify) {
+        $.ajax({
+          url: '',
+          type: 'POST',
+          data: {
+            username: username,
+            password: password
+          },
+          success: function (res) {
+            console.log(res)
+          },
+          error: function (err) {
+            console.log(err)
+          }
+        })
+      } else {
+        alert('两次密码不一致');
+      }
     }
-    
   }
 }
+
 </script>
 
 <style scoped>
