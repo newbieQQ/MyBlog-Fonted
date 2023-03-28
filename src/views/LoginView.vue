@@ -88,7 +88,7 @@ export default {
       }, "300");
     },
     SignIn() {
-      // 获取表单数据
+
       let password = document.getElementById('Loginpassword').value;
       let username = document.getElementById('LoginUsername').value;
 
